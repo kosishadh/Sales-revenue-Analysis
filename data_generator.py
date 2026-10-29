@@ -153,3 +153,12 @@ def generate_synthetic_data(
     df.sort_values("Order_Date", inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
+
+if __name__ == "__main__":
+    df = generate_synthetic_data()
+
+    df.to_csv("sales_data.csv", index=False)
+
+    print("Dataset generated successfully!")
+    print("Number of rows:", len(df))
+    print(df.head())
